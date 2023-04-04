@@ -1,9 +1,9 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-import { increase, decrease } from "@redux/actions";
-import { RootState } from "@redux/reducers";
-import { useAppDispatch } from "@redux/store";
+import { increase, decrease } from '@redux/actions';
+import { RootState } from '@redux/reducers';
+import { useAppDispatch } from '@redux/store';
 
 export default function Counter() {
   const dispatch = useAppDispatch();
@@ -13,7 +13,7 @@ export default function Counter() {
 
   return (
     <div>
-      <div>
+      <div className="text-4xl">
         <h2>Counter</h2>
         <button type="button" onClick={() => dispatch(increase())}>
           +
