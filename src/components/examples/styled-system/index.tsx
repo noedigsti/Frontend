@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import { Card, CardHeader, CardContent, CardFooter, Button } from './styled';
 
 export const StyledSystemExample: React.FC = () => {
   return (
     <Card bg="wheat" maxWidth="20rem" borderRadius={10} mx="auto" mt="32px">
       <CardHeader
-        p="16px"
+        p="1rem"
         borderBottomWidth={1}
         borderBottomColor="green"
         borderBottomStyle="solid"
       >
         <h2>Styled-System Example</h2>
       </CardHeader>
-      <CardContent p="20px">
+      <CardContent p="1rem">
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab, officiis
           dolor eaque optio quam deserunt nesciunt tempore iste unde cum eius
