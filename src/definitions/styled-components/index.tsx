@@ -19,7 +19,13 @@ export const useTheme = () => {
   return { theme: theme === 'light' ? light : dark, toggle, themeName: theme };
 };
 
-export const StyledThemeProvider: React.FC = ({ children }) => {
+interface StyledThemeProviderProps {
+  children: React.ReactNode;
+}
+
+export const StyledThemeProvider: React.FC<StyledThemeProviderProps> = ({
+  children,
+}) => {
   const [theme, setTheme] = React.useState('light');
 
   const toggle = () => {
