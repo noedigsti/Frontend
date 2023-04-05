@@ -11,9 +11,9 @@ const Home: React.FC = () => {
       <Header />
       {/* <StyledSystemExample /> */}
       {/* <Pokemon /> */}
-      {/* <Counter /> */}
+      <Counter />
       <Main />
-      <Cards />
+      {/* <Cards /> */}
       <Footer />
     </Container>
   );

@@ -12,7 +12,7 @@ export default function Counter() {
   );
 
   return (
-    <div>
+    <div className="text-center">
       <div className="text-4xl">
         <h2>Counter</h2>
         <button type="button" onClick={() => dispatch(increase())}>
