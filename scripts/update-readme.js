@@ -1,6 +1,8 @@
 import fs from 'fs/promises';
 import path from 'path';
 
+console.log('Current working directory:', process.cwd());
+
 const rootPath = process.cwd();
 const packageJsonPath = path.join(rootPath, 'package.json');
 const readmePath = path.join(rootPath, 'README.md');
