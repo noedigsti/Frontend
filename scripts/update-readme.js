@@ -1,10 +1,24 @@
 import fs from 'fs/promises';
-import { fileURLToPath } from 'url';
 import path from 'path';
 
 const rootPath = process.cwd();
 const packageJsonPath = path.join(rootPath, '../package.json');
-const readmePath = fileURLToPath(new URL('../README.md', import.meta.url));
+
+const readmeMdPath = path.join(rootPath, '../README.md');
+const readmeMDPath = path.join(rootPath, '../README.MD');
+let readmePath;
+
+try {
+  await fs.access(readmeMdPath);
+  readmePath = readmeMdPath;
+} catch {
+  try {
+    await fs.access(readmeMDPath);
+    readmePath = readmeMDPath;
+  } catch {
+    throw new Error('Neither README.md nor README.MD file found.');
+  }
+}
 
 const packageJson = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'));
 const readmeContent = await fs.readFile(readmePath, 'utf-8');
