@@ -1,11 +1,7 @@
-const fs = await import('fs/promises');
+import fs from 'fs/promises';
 import path from 'path';
 
-const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
-const rootPath = isGitHubActions
-  ? process.cwd()
-  : path.resolve(__dirname, '..');
-
+const rootPath = process.cwd();
 const packageJsonPath = path.join(rootPath, 'package.json');
 const readmePath = path.join(rootPath, 'README.md');
 
