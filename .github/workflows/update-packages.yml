@@ -21,6 +21,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: List files and folders in the current directory
+        run: |
+            ls -al
+            cd ..
+            ls -al
+
       - name: Update README.md
         run: npm run update:readme
 
