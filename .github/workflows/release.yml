@@ -26,8 +26,12 @@ jobs:
       - name: Create tag
         run: |
           VERSION=$(echo $GITHUB_REF | sed 's/refs\/heads\///')
-          git tag $VERSION
-          git push origin $VERSION
+          if ! git rev-parse $VERSION >/dev/null 2>&1; then
+            git tag $VERSION
+            git push origin $VERSION
+          else
+            echo "Tag $VERSION already exists."
+          fi
 
       - name: Create GitHub release
         uses: softprops/action-gh-release@v1
