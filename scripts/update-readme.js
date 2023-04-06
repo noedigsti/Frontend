@@ -1,10 +1,13 @@
 const fs = await import('fs/promises');
-import { fileURLToPath } from 'url';
+import path from 'path';
 
-const packageJsonPath = fileURLToPath(
-  new URL('../package.json', import.meta.url)
-);
-const readmePath = fileURLToPath(new URL('../README.md', import.meta.url));
+const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
+const rootPath = isGitHubActions
+  ? process.cwd()
+  : path.resolve(__dirname, '..');
+
+const packageJsonPath = path.join(rootPath, 'package.json');
+const readmePath = path.join(rootPath, 'README.md');
 
 const packageJson = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'));
 const readmeContent = await fs.readFile(readmePath, 'utf-8');

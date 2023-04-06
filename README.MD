@@ -1,8 +1,8 @@
 # a modern <u>*Frontend*</u> template
 
-This project was initially generated with [superplate](https://github.com/pankod/superplate). [superplate](https://github.com/pankod/superplate) is a Next.js all-in-one project generator.
+This project was initially generated with [superplate](https://github.com/pankod/superplate), a Next.js all-in-one project generator.
 
-To learn more about **superplate**, please check out the [Documentation](https://github.com/pankod/superplate).
+To learn more about **[superplate](https://github.com/pankod/superplate)**, please check out the [Documentation](https://github.com/pankod/superplate).
 
 ---
 ## Getting Started
@@ -77,17 +77,12 @@ To learn more about **superplate**, please check out the [Documentation](https:/
 ```
 
 #### Testing.
-* **Running all Jest tests**
+* **Running all tests**
 
 ```bash
-    npm run test
+    npm run test:all
 
 ```
-* **Running all Cypress tests**
-```bash
-    npm run cypress:run
-```
-
 ---
 ## License
 
