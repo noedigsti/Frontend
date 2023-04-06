@@ -1,9 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-import fs from 'fs/promises';
-import path from 'path';
-
 const rootPath = process.cwd();
 const packageJsonPath = path.join(rootPath, '../package.json');
 const readmePath = path.join(rootPath, '../README.MD');
