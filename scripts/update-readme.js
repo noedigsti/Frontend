@@ -1,22 +1,17 @@
-import fs from 'fs/promises';
+const fs = await import('fs/promises');
 import { fileURLToPath } from 'url';
-import path from 'path';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const packageJsonPath = path.join(__dirname, '..', 'package.json');
-const readmePath = path.join(__dirname, '..', 'README.md');
+const packageJsonPath = fileURLToPath(
+  new URL('../package.json', import.meta.url)
+);
+const readmePath = fileURLToPath(new URL('../README.md', import.meta.url));
 
-(async () => {
-  const packageJson = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'));
-  const readmeContent = await fs.readFile(readmePath, 'utf-8');
+const packageJson = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'));
+const readmeContent = await fs.readFile(readmePath, 'utf-8');
 
-  const packagesTableRegex =
-    /\| Package \| Description \| Version \|\r?\n\|:--------\|:------------\|:------------\|\r?\n(\| \[.*?\]\(.*?\) \| .*? \| \[!\[npm\]\(.*?\)]\(.*?\) \|\r?\n)+/;
-
+const generateTable = (title, dependencies) => {
   const packagesLines = [];
-  for (const [packageName, packageVersion] of Object.entries(
-    packageJson.dependencies
-  )) {
+  for (const [packageName, packageVersion] of Object.entries(dependencies)) {
     const packageInfo = {
       name: packageName,
       version: packageVersion,
@@ -25,20 +20,34 @@ const readmePath = path.join(__dirname, '..', 'README.md');
     };
 
     packagesLines.push(
-      `| [${packageInfo.name}](${packageInfo.url}) | The package description | [![npm](${packageInfo.versionBadgeUrl})](${packageInfo.url}) |`
+      `| [${packageInfo.name}](${packageInfo.url}) | [![npm](${packageInfo.versionBadgeUrl})](${packageInfo.url}) |`
     );
   }
 
-  const newPackagesTable = `
-| Package | Description | Version |
-|:--------|:------------|:------------|
+  return `
+| ${title} | Version |
+|:--------|:--------|
 ${packagesLines.join('\n')}
 `;
+};
 
-  const updatedReadmeContent = readmeContent.replace(
-    packagesTableRegex,
-    newPackagesTable.trim()
+const dependenciesTable = generateTable(
+  'dependencies',
+  packageJson.dependencies
+);
+const devDependenciesTable = generateTable(
+  'devDependencies',
+  packageJson.devDependencies
+);
+
+const updatedReadmeContent = readmeContent
+  .replace(
+    /<!-- DEPENDENCIES_TABLE_START -->[\s\S]*?<!-- DEPENDENCIES_TABLE_END -->/,
+    `<!-- DEPENDENCIES_TABLE_START -->\n${dependenciesTable.trim()}\n<!-- DEPENDENCIES_TABLE_END -->`
+  )
+  .replace(
+    /<!-- DEVDEPENDENCIES_TABLE_START -->[\s\S]*?<!-- DEVDEPENDENCIES_TABLE_END -->/,
+    `<!-- DEVDEPENDENCIES_TABLE_START -->\n${devDependenciesTable.trim()}\n<!-- DEVDEPENDENCIES_TABLE_END -->`
   );
 
-  await fs.writeFile(readmePath, updatedReadmeContent, 'utf-8');
-})();
+await fs.writeFile(readmePath, updatedReadmeContent, 'utf-8');
