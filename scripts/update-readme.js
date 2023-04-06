@@ -3,13 +3,13 @@ import { fileURLToPath } from 'url';
 import path from 'path';
 
 const rootPath = process.cwd();
-const packageJsonPath = path.join(rootPath, 'package.json');
-const readmePath = fileURLToPath(new URL('../../README.md', import.meta.url));
+const packageJsonPath = path.join(rootPath, '../package.json');
+const readmePath = fileURLToPath(new URL('../README.md', import.meta.url));
 
 const packageJson = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'));
 const readmeContent = await fs.readFile(readmePath, 'utf-8');
 
-const generateTable = (title, dependencies) => {
+const generateTable = (title, dependencies = {}) => {
   const packagesLines = [];
   for (const [packageName, packageVersion] of Object.entries(dependencies)) {
     const packageInfo = {
@@ -33,11 +33,11 @@ ${packagesLines.join('\n')}
 
 const dependenciesTable = generateTable(
   'dependencies',
-  packageJson.dependencies
+  packageJson.dependencies || {}
 );
 const devDependenciesTable = generateTable(
   'devDependencies',
-  packageJson.devDependencies
+  packageJson.devDependencies || {}
 );
 
 const updatedReadmeContent = readmeContent
