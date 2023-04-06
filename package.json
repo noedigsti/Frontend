@@ -1,17 +1,18 @@
 {
-  "name": "webapp",
+  "name": "frontend",
   "version": "0.1.0",
+  "author": "Gideon",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest -c test/jest.config.js",
+    "test": "jest -c test/jest.config.js --coverage",
+    "test:all": "npm run build && jest -c test/jest.config.js && npm run cypress:test",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --config video=false",
     "cypress:test": "start-server-and-test start http://localhost:3000 cypress:run",
-    "update:readme": "node scripts/update-readme.js"
+    "update:readme": "npm run update:readme --prefix ./scripts"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",

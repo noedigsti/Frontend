@@ -6,3 +6,7 @@ node_modules
 .env
 .env.*
 !.env.example
+# production build
+build
+# test coverage
+coverage

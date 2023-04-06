@@ -1,19 +1,34 @@
-npm install superplate-cli
-npx superplate-cli webapp
-- [x] Next.js
-- [x] TailwindCSS
-- [x] styled-components
-- [x] styled-system
-- [x] Redux
-- [x] rtk-query
-- [x] ESLint
-- [x] Jest
-- [x] Cypress
-- [x] Docker
-- [x] GitHub Actions
+name: Update Packages Table
 
-cd webapp
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'package.json'
 
-### Additional
+jobs:
+  update-packages-table:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
 
-npm i --save-dev @types/jest @types/styled-components @types/styled-system
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Update Packages Table
+        run: npm run update-packages-table
+
+      - name: Commit changes
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git add README.md
+          git commit -m "Update packages table in README.md" || true
+          git push
