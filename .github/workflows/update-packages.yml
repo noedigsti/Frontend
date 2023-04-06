@@ -27,7 +27,7 @@ jobs:
             cd ..
             ls -al
 
-      - name: Update README.md
+      - name: Update README.MD
         run: npm run update:readme
 
       - name: Commit changes
@@ -39,6 +39,6 @@ jobs:
           git config --global user.name "${BOT_NAME}"
           git config --global user.email "${BOT_EMAIL}"
           git remote set-url origin https://x-access-token:${BOT_ACCESS_TOKEN}@github.com/${{ github.repository }}.git
-          git add README.md
-          git commit -m "Update packages table in README.md" || true
+          git add README.MD
+          git commit -m "Update packages table in README.MD" || true
           git push
