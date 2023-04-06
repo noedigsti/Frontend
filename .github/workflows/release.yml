@@ -23,6 +23,12 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Create tag
+        run: |
+          VERSION=$(echo $GITHUB_REF | sed 's/refs\/heads\///')
+          git tag $VERSION
+          git push origin $VERSION
+
       - name: Create GitHub release
         uses: softprops/action-gh-release@v1
         with:
