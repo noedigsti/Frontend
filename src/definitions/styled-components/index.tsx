@@ -8,30 +8,28 @@ import { ThemeProvider } from 'styled-components';
 import { dark } from './dark';
 import { light } from './light';
 
-export const ThemeContext = React.createContext({
+type ThemeContextType = {
+  theme: string;
+  toggle: () => void;
+};
+
+const ThemeContext = React.createContext<ThemeContextType>({
   theme: 'light',
-  toggle: () => undefined,
+  toggle: () => [],
 });
 
-export const useTheme = () => {
+const useTheme = () => {
   const { theme, toggle } = React.useContext(ThemeContext);
-
   return { theme: theme === 'light' ? light : dark, toggle, themeName: theme };
 };
 
-interface StyledThemeProviderProps {
-  children: React.ReactNode;
-}
-
-export const StyledThemeProvider: React.FC<StyledThemeProviderProps> = ({
-  children,
-}) => {
+const StyledThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = React.useState('light');
 
-  const toggle = () => {
+  const toggle = React.useCallback(() => {
     setTheme((theme) => (theme === 'light' ? 'dark' : 'light'));
-    return undefined;
-  };
+  }, []);
+
   const values = React.useMemo(
     () => ({
       theme,
@@ -48,3 +46,5 @@ export const StyledThemeProvider: React.FC<StyledThemeProviderProps> = ({
     </ThemeContext.Provider>
   );
 };
+
+export { ThemeContext, useTheme, StyledThemeProvider };

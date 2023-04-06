@@ -12,7 +12,7 @@ const Home: React.FC = () => {
       {/* <StyledSystemExample /> */}
       {/* <Pokemon /> */}
       <Counter />
-      <Main />
+      {/* <Main /> */}
       {/* <Cards /> */}
       <Footer />
     </Container>

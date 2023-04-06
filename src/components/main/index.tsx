@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import { Button } from "@components";
+import { Button } from '@components';
 
-export const Main: React.FC = () => {
+export const Main = () => {
   return (
     <div
       style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        textAlign: "center",
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
         paddingTop: 32,
         paddingBottom: 32,
       }}
@@ -33,21 +33,21 @@ export const Main: React.FC = () => {
       </div>
       <div
         style={{
-          textAlign: "left",
-          display: "flex",
-          flexDirection: "column",
+          textAlign: 'left',
+          display: 'flex',
+          flexDirection: 'column',
           fontSize: 18,
-          backgroundColor: "#f8f8f8",
-          width: "800px",
-          padding: "20px",
-          borderRadius: "20px",
+          backgroundColor: '#f8f8f8',
+          width: '800px',
+          padding: '20px',
+          borderRadius: '20px',
           marginTop: 25,
         }}
       >
         <h1 className="text-4xl mb-2">Building a side project?</h1>
         <p>
-          Meet the headless, React-based solution to build sleek <b>CRUD</b>{" "}
-          applications. With{" "}
+          Meet the headless, React-based solution to build sleek <b>CRUD</b>{' '}
+          applications. With{' '}
           <a
             className="underline text-blue-600"
             href="https://s.refine.dev/superplate"
@@ -60,14 +60,14 @@ export const Main: React.FC = () => {
         </p>
         <br />
         <p>
-          Try{" "}
+          Try{' '}
           <a
             className="underline text-blue-600"
             href="https://s.refine.dev/superplate"
             target="_blank"
           >
             refine
-          </a>{" "}
+          </a>{' '}
           to rapidly build your next <b>CRUD</b> project, whether it's an admin
           panel, dashboard, internal tool or storefront.
         </p>

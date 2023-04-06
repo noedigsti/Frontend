@@ -2,6 +2,7 @@
   "name": "webapp",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,10 +10,12 @@
     "test": "jest -c test/jest.config.js",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --config video=false",
-    "cypress:test": "start-server-and-test start http://localhost:3000 cypress:run"
+    "cypress:test": "start-server-and-test start http://localhost:3000 cypress:run",
+    "update:readme": "node scripts/update-readme.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
+    "fs": "^0.0.1-security",
     "isomorphic-unfetch": "^4.0.2",
     "next": "^13.2.4",
     "react": "^18.2.0",

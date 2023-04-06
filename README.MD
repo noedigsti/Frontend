@@ -1,89 +1,52 @@
-# webapp
+# a modern <u>*Frontend*</u> template
 
-This project was generated with [superplate](https://github.com/pankod/superplate).
-
-## Getting Started
-
-superplate is a Next.js all-in-one project generator. Create your project with the tools you need without spending hours on setting them up.
-
-## Available Scripts
-
-### Running the development server.
-
-```bash
-    npm run dev
-```
-
-### Building for production.
-
-```bash
-    npm run build
-```
-
-### Running the production server.
-
-```bash
-    npm run start
-```
-
-## Learn More
+This project was initially generated with [superplate](https://github.com/pankod/superplate). [superplate](https://github.com/pankod/superplate) is a Next.js all-in-one project generator.
 
 To learn more about **superplate**, please check out the [Documentation](https://github.com/pankod/superplate).
 
-### **TailwindCSS**
+---
+## Getting Started
 
-A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+| Package | Description | Version |
+|:--------|:------------|:------------|
+| [@reduxjs/toolkit](https://www.npmjs.com/package/@reduxjs/toolkit) | The package description | [![npm](https://img.shields.io/npm/v/@reduxjs/toolkit)](https://www.npmjs.com/package/@reduxjs/toolkit) |
+| [fs](https://www.npmjs.com/package/fs) | The package description | [![npm](https://img.shields.io/npm/v/fs)](https://www.npmjs.com/package/fs) |
+| [isomorphic-unfetch](https://www.npmjs.com/package/isomorphic-unfetch) | The package description | [![npm](https://img.shields.io/npm/v/isomorphic-unfetch)](https://www.npmjs.com/package/isomorphic-unfetch) |
+| [next](https://www.npmjs.com/package/next) | The package description | [![npm](https://img.shields.io/npm/v/next)](https://www.npmjs.com/package/next) |
+| [react](https://www.npmjs.com/package/react) | The package description | [![npm](https://img.shields.io/npm/v/react)](https://www.npmjs.com/package/react) |
+| [react-dom](https://www.npmjs.com/package/react-dom) | The package description | [![npm](https://img.shields.io/npm/v/react-dom)](https://www.npmjs.com/package/react-dom) |
+| [react-redux](https://www.npmjs.com/package/react-redux) | The package description | [![npm](https://img.shields.io/npm/v/react-redux)](https://www.npmjs.com/package/react-redux) |
+| [styled-components](https://www.npmjs.com/package/styled-components) | The package description | [![npm](https://img.shields.io/npm/v/styled-components)](https://www.npmjs.com/package/styled-components) |
+| [styled-system](https://www.npmjs.com/package/styled-system) | The package description | [![npm](https://img.shields.io/npm/v/styled-system)](https://www.npmjs.com/package/styled-system) |
 
-[Go To Documentation](https://tailwindcss.com/docs)
+---
+## Available Scripts
 
-### **Styled Components**
+#### Running the application.
 
-Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS, styled-components allows you to write actual CSS code to style your components.
+* **Development**
+```bash
+    npm run dev
+```
+* **Production**
+```bash
+    npm run build
+    npm run start
+```
 
-[Go To Documentation](https://styled-components.com/docs)
+#### Testing.
+* **Running all Jest tests**
 
-### **Styled System**
+```bash
+    npm run test
 
-Styled System is a collection of utility functions that add style props to your React components and allows you to control styles based on a global theme object with typographic scales, colors, and layout properties.
+```
+* **Running all Cypress tests**
+```bash
+    npm run cypress:run
+```
 
-[Go To Documentation](https://styled-system.com/getting-started)
-
-### **React Redux**
-
-Redux helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.
-
-[Go To Documentation](https://redux.js.org/introduction/getting-started)
-
-### **RTK Query**
-
-RTK Query is a powerful data fetching and caching tool
-
-[Go To Documentation](https://redux-toolkit.js.org/rtk-query/overview)
-
-### **Jest**
-
-Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
-
-[Go To Documentation](https://jestjs.io/docs/en/getting-started)
-
-### **Cypress**
-
-Fast, easy and reliable testing for anything that runs in a browser.
-
-[Go To Documentation](https://docs.cypress.io/guides/overview/why-cypress.html)
-
-### **Docker**
-
-Docker simplifies and accelerates your workflow, while giving developers the freedom to innovate with their choice of tools, application stacks, and deployment environments for each project.
-
-[Go To Documentation](https://www.docker.com/get-started)
-
-### **Github Actions**
-
-GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub.
-
-[Go To Documentation](https://docs.github.com/en/actions)
-
+---
 ## License
 
 MIT

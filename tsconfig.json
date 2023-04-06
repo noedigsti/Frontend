@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
@@ -10,9 +10,10 @@
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
+    "noEmit": true, // Regenerate the build folder
+    "outDir": "dist",
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -62,7 +63,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "./src/**/*"
+    "./src/**/*",
+    "./scripts/**/*"
   ],
   "exclude": [
     "node_modules",

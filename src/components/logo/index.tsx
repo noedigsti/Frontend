@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-export const Logo: React.FC = () => {
+export const Logo = () => {
   return (
     <Image
       data-test="icon"
