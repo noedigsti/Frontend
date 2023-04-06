@@ -50,6 +50,7 @@ To learn more about **[superplate](https://github.com/pankod/superplate)**, plea
 | [babel-plugin-styled-components](https://www.npmjs.com/package/babel-plugin-styled-components) | [![npm](https://img.shields.io/npm/v/babel-plugin-styled-components)](https://www.npmjs.com/package/babel-plugin-styled-components) |
 | [cypress](https://www.npmjs.com/package/cypress) | [![npm](https://img.shields.io/npm/v/cypress)](https://www.npmjs.com/package/cypress) |
 | [dotenv](https://www.npmjs.com/package/dotenv) | [![npm](https://img.shields.io/npm/v/dotenv)](https://www.npmjs.com/package/dotenv) |
+| [eslint](https://www.npmjs.com/package/eslint) | [![npm](https://img.shields.io/npm/v/eslint)](https://www.npmjs.com/package/eslint) |
 | [identity-obj-proxy](https://www.npmjs.com/package/identity-obj-proxy) | [![npm](https://img.shields.io/npm/v/identity-obj-proxy)](https://www.npmjs.com/package/identity-obj-proxy) |
 | [jest](https://www.npmjs.com/package/jest) | [![npm](https://img.shields.io/npm/v/jest)](https://www.npmjs.com/package/jest) |
 | [jest-environment-jsdom](https://www.npmjs.com/package/jest-environment-jsdom) | [![npm](https://img.shields.io/npm/v/jest-environment-jsdom)](https://www.npmjs.com/package/jest-environment-jsdom) |
