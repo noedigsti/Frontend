@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
+
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
@@ -23,25 +23,16 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Create tag
-        run: |
-          VERSION=$(echo $GITHUB_REF | sed 's/refs\/heads\///')
-          if ! git rev-parse $VERSION >/dev/null 2>&1; then
-            git tag $VERSION
-            git push origin $VERSION
-          else
-            echo "Tag $VERSION already exists."
-          fi
-          
       - name: Generate release tag
         id: tag
         run: |
-          echo "::set-output name=release_tag::UserBuild_$(date +"%Y.%m.%d_%H-%M")"
+          RELEASE_TAG="Release_$(date +"%Y.%m.%d_%H-%M")"
+          echo "RELEASE_TAG=$RELEASE_TAG" >> $GITHUB_ENV
 
       - name: Create GitHub release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ steps.tag.outputs.release_tag }}
+          tag_name: ${{ env.RELEASE_TAG }}
           prerelease: false
           draft: false
         env:
