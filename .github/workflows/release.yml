@@ -39,5 +39,6 @@ jobs:
           body_path: release_notes.md # Replace this with the path to your release notes file, if you have one
           draft: false
           prerelease: false
+          tag_name: ${{ github.ref }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
