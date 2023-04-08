@@ -21,8 +21,6 @@ To learn more about **[superplate](https://github.com/pankod/superplate)**, plea
 | [PostCSS](https://www.npmjs.com/package/postcss) | Transforming styles with JS plugins |
 | [Docker](https://www.npmjs.com/package/docker) | Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. |
 
-#### Dependencies
-
 <!-- DEPENDENCIES_TABLE_START -->
 | dependencies | Version |
 |:--------|:--------|
